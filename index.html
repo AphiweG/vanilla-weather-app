@@ -16,6 +16,7 @@
   </head>
   <body>
     <div class="container">
+      <div class="weather-app-wrap">
       <div class="weather-app">
       <h1 class="heading">Midrand</h1>
       <ul>
@@ -24,11 +25,14 @@
       </ul>
       <div class="row">
         <div class="col-6">
+          <div class="weather-temperature">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
             alt="cloudy"
           />
-          7°C|°F
+          <strong>7</strong>
+          <small>°C | <a href="#">°F</a> </small>
+        </div>
         </div>
         <div class="col-6">
           <ul>
@@ -38,13 +42,15 @@
           </ul>
         </div>
       </div>
+      
+      </small>
+      </div>
       <small>
         <a href="https://github.com/AphiweG/vanilla-weather-app" target="_blank"
           >Open-source code</a
         >
         by Aphiwe Mufamadi
-      </small>
-      </div>
+        </div>
     </div>
     <script src="src/index.js"></script>
   </body>
