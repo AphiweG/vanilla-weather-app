@@ -48,4 +48,5 @@ li {
   line-height: 19px;
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }
