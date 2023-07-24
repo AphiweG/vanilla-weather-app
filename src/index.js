@@ -39,9 +39,24 @@ function displayTemperature(response) {
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function search(city) {
+    
 const apiKey = "9ab9c8883313d4e254caf910926ea7c5";
-const city = "Midrand";
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
+
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    const cityInputElement = document.getElementById("city-input");
+    console.log(cityInputElement.value);
+    search(cityInputElement.value);
+
+}
+
+
+
+
+let form = document.getElementById("search-form");
+form.addEventListener("submit", handleSubmit);
