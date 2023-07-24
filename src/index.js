@@ -21,42 +21,59 @@ dateElement.textContent = `${currentTime}`;
 
 function displayTemperature(response) {
   console.log(response.data);
-  const temeratureElement = document.getElementById("temperature");
+  const temperatureElement = document.getElementById("temperature");
   const cityElement = document.getElementById("city");
   const descriptionElement = document.getElementById("desciption");
   const humidityElement = document.getElementById("humidity");
   const windElement = document.getElementById("wind");
   const iconElement = document.getElementById("icon");
-  temeratureElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
-        "src",
-        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-    iconElement.setAttribute("alt", response.data.weather[0].description);
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
-    
-const apiKey = "9ab9c8883313d4e254caf910926ea7c5";
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemperature);
-
+  const apiKey = "9ab9c8883313d4e254caf910926ea7c5";
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
-    event.preventDefault();
-    const cityInputElement = document.getElementById("city-input");
-    console.log(cityInputElement.value);
-    search(cityInputElement.value);
-
+  event.preventDefault();
+  const cityInputElement = document.getElementById("city-input");
+  console.log(cityInputElement.value);
+  search(cityInputElement.value);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  const fahrenheitTemperature = Math.round((19 * 9) / 5 + 32 + 32);
+  const temperatureElement = document.getElementById("temperature");
+  temperatureElement.innerHTML = fahrenheitTemperature;
+}
 
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  const temperatureElement = document.getElementById("temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
-
-let form = document.getElementById("search-form");
+let celsiusTemperature = null;
+const form = document.getElementById("search-form");
 form.addEventListener("submit", handleSubmit);
+
+const fahrenheitLink = document.getElementById("fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+const celsiusLink = document.getElementById("celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Midrand");

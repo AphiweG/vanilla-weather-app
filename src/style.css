@@ -24,17 +24,17 @@ body {
   width: 64px;
 }
 .weather-temperature strong {
-    color: rgb(52, 52, 56);
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1;
+  color: rgb(52, 52, 56);
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1;
 }
 .weather-temperature small {
-    position: relative;
-    color: rgb(52, 52, 56);
-    top: -25px;
-    font-size: 16px;
-    line-height: 1;
+  position: relative;
+  color: rgb(52, 52, 56);
+  top: -25px;
+  font-size: 16px;
+  line-height: 1;
 }
 ul {
   margin: 0;
@@ -48,8 +48,14 @@ li {
   line-height: 19px;
   margin: 0;
   padding: 0;
-  
 }
-li:first-letter{
-    text-transform: capitalize;
+li:first-letter {
+  text-transform: capitalize;
+}
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
