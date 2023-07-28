@@ -14,7 +14,7 @@ body {
   padding: 20px;
   border: 2px solid #e9e8e8;
   border-radius: 10px;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(230, 230, 230);
 }
 .weather-app-wrap {
   max-width: 600px;
@@ -26,14 +26,14 @@ body {
   width: 64px;
 }
 .weather-temperature strong {
-  color: rgb(52, 52, 56);
+  color: rgb(18, 18, 19);
   font-weight: 400;
   font-size: 50px;
   line-height: 1;
 }
 .weather-temperature small {
   position: relative;
-  color: rgb(52, 52, 56);
+  color: rgb(32, 32, 32);
   top: -25px;
   font-size: 16px;
   line-height: 1;
