@@ -58,12 +58,21 @@ li:first-letter {
   color: rgb(33, 33, 33);
   cursor: default;
 }
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
+
 .code-owner {
   font-size: 12px;
   width: 48%;
   margin: auto;
   padding: 10px;
+}
+a:link {
+  text-decoration: none;
+}
+.weather-forecast{
+  margin-top: 20px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  color: #000;
 }
