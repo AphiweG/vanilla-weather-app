@@ -76,3 +76,8 @@ a:link {
   font-size: 16px;
   color: #000;
 }
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -25px;
+}
